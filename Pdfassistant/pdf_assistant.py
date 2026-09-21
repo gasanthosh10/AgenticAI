@@ -17,13 +17,12 @@ os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
 db_url = "postgresql+psycopg://ai:ai@localhost:5532/ai"
 
-
 knowledge_base = PDFUrlKnowledgeBase(
     urls=[
-        "https://images.icc-cricket.com/image/upload/prd/v1sjpeistunm3ecsdwwc.pdf"
+        "https://phi-public.s3.amazonaws.com/recipes/ThaiRecipes.pdf"
     ],
     vector_db=PgVector2(
-        collection="cricket",
+        collection="recipes",
         db_url=db_url,
         embedder=SentenceTransformerEmbedder(
             model="sentence-transformers/all-MiniLM-L6-v2"
@@ -31,14 +30,12 @@ knowledge_base = PDFUrlKnowledgeBase(
     ),
 )
 
-knowledge_base.load(recreate=False)
-
+knowledge_base.load()
 
 storage = PgAssistantStorage(
     table_name="pdf_assistant",
-    db_url=db_url
+    db_url=db_url,
 )
-
 
 def pdf_assistant(new: bool = False, user: str = "user"):
 
@@ -75,5 +72,7 @@ def pdf_assistant(new: bool = False, user: str = "user"):
 
 
 if __name__ == "__main__":
-    typer.run(pdf_assistant)
-     
+    typer.run(pdf_assistant)   
+    
+    
+    
