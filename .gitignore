@@ -1,0 +1,24 @@
+# Langflow / Chroma local data
+chroma_data/
+chroma.sqlite
+*.sqlite3
+
+# Langflow runtime/generated flow data
+dfa14bd0-ea44-4fce-a528-755fa4be6df5/
+e3ccefc1-6a8e-4ada-8e75-06bc4f22ec06/
+
+# Environment files
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.venv312/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
