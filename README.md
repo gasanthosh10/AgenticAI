@@ -633,3 +633,4 @@ GitHub: [github.com/gasanthosh10](https://github.com/gasanthosh10)
 🚧 **Active Development**
 
 The current implementation successfully establishes the foundation of an Agentic AI + PDF RAG system using Langflow, Ollama, Llama 3.2, embeddings, and Chroma. The project will continue to evolve toward a complete multi-tool Agentic Research & Knowledge Assistant with external search, intelligent tool selection, advanced RAG, multi-source reasoning, conversation memory, evaluation, and production deployment.
+
